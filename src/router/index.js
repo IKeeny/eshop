@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+//解决Element UI导航栏重复点菜单报错问题
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -13,7 +19,17 @@ Vue.use(VueRouter)
       component:()=>import('@/components/Login')
     },{
       path:'/home',
-      component:()=>import('@/components/Home')
+      component:()=>import('@/components/Home'),
+      redirect: '/welcome',
+      children:[
+        {
+          path: '/welcome',
+          component: ()=>import('@/components/Welcome')
+        },{
+          path:'/users',
+          component: ()=>import('@/components/user/Users')
+        }
+      ]
     }
 ]
 
