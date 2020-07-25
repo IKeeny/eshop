@@ -34,6 +34,9 @@ Vue.use(VueRouter)
         },{
           path:'/roles',
           component: ()=>import('@/components/power/Roles')
+        },{
+          path:'/categories',
+          component: ()=>import('@/components/goods/Cate')
         }
       ]
     }
