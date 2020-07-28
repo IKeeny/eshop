@@ -37,6 +37,9 @@ Vue.use(VueRouter)
         },{
           path:'/categories',
           component: ()=>import('@/components/goods/Cate')
+        },{
+          path:'/params',
+          component: ()=>import('@/components/goods/Params')
         }
       ]
     }
