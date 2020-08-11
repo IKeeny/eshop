@@ -19,6 +19,10 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 
+//导入echarts图表
+import echarts from 'echarts'
+Vue.use.$echarts = echarts
+
 Vue.config.productionTip = false
 //将富文本编辑器注册为全局可用的组件
 Vue.use(VueQuillEditor)
