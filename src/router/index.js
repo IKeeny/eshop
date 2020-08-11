@@ -49,6 +49,9 @@ Vue.use(VueRouter)
         },{
           path:'/orders',
           component: ()=>import('@/components/order/Order')
+        },{
+          path:'/reports',
+          component: ()=>import('@/components/report/Report')
         }
       ]
     }
